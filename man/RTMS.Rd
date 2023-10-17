@@ -1,0 +1,60 @@
+\name{RTMS}
+\alias{RTMS}
+\title{Recommendation and Trimmed Mean Score}
+\description{
+This package combines multiple screening methods by retaining a certain number of variables from each method and then taking a trimmed average of the rankings from the remaining methods, resulting in a more informative variable combination.}
+\usage{
+RTMS(x,y,rp)
+}
+\arguments{
+  \item{x}{Matrix of predictors.}
+
+  \item{y}{Response variable.}
+
+  \item{rp}{The number of recommendate predictors. The default is 3.}
+}
+
+\details{
+See the paper provided in Reference section.
+}
+
+\value{
+A \code{'RTMS'} object is retured. The components are:
+
+\item{RTMS}{The combines rankings.}
+\item{DCSIS}{The DCSIS rankings.}
+\item{SIRS}{The SIRS rankings.}
+\item{ISIS}{The ISIS rankings.}
+
+}
+
+
+
+\examples{
+
+### Example usage:
+Below is an example of using the function RTMS:
+#generate simulation data
+library(RTMS)
+n<-100
+p<-1000
+beta<-c(3,1.5,0,0,2,rep(0,p-5))
+b0<-1
+x<-matrix(rnorm(n*p,0,1),nrow=n,ncol=p)
+e<-rnorm(n,0,3)
+y<-x\%*\%beta+b0+e
+
+R3  <- RTMS(x, y, 3)$RTMS
+#the Recommendation and Trimmed Mean Score
+R3  <- R3$RTMS
+#the DCSIS Ranking
+RDCSIS  <- R3$DCSIS
+
+#the SIRS Ranking
+RSIRS  <- R3$SIRS
+
+#the ISIS Ranking
+RISIS  <- R3$ISIS
+}
+
+
