@@ -22,7 +22,7 @@ e    <- rnorm(n,0,3)
 y    <- x%*%beta+b0+e  
 
 #the Recommendation and Trimmed Mean Ranking
-R3  <- RTMS(x, y, 3)$RTMS
+R3  <- RTMS(x, y, rp=3, method="3S", mc=1)$RTMS
 #the DCSIS Ranking
 RDCSIS  <- R3$DCSIS
 
