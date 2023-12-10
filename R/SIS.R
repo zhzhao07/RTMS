@@ -297,8 +297,7 @@ sisglm <- function(x, y, family, penalty, concavity.parameter, tune, nfolds, typ
 
                if (split.tries >= 20) {
                   cat("No variables remaining after ", split.tries, " sample splitting attempts! \n")
-                  cat("You can try a more conservative variable screening approach! \n")                } else
-                    return(sisglm(old.x, y, family, penalty, concavity.parameter, tune, nfolds, type.measure, gamma.ebic,
+                  cat("You can try a more conservative variable screening approach! \n")                }  else return (sisglm(old.x, y, family, penalty, concavity.parameter, tune, nfolds, type.measure, gamma.ebic,
                   nsis, iter, iter.max, varISIS, perm, q, greedy, greedy.size, seed, standardize, s1, s2, split.tries))
             }
           
