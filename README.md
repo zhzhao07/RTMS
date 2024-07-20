@@ -1,5 +1,6 @@
 # RTMS
-This package combines multiple screening methods by retaining a certain number of variables from each method and then taking a trimmed average of the rankings from the remaining methods, resulting in a more informative variable combination.   
+This package combines multiple screening methods by retaining a certain number of top im- portant variables from each method and then, for the rest of the variables, taking a trimmed average of their rankings, resulting in a more informative variable combination.
+
 ### Authors: 
 Zhihao Zhao `<zhzhao@cueb.edu.cn>`, Li Wen `<wlwendy1008@163.com>`, Yuhong Yang `<yyang@stat.umn.edu>`.  
 ### Installation
